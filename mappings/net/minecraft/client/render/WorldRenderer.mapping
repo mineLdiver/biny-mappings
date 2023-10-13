@@ -1,2 +1,10 @@
 CLASS net/minecraft/class_471 net/minecraft/client/render/WorldRenderer
+	FIELD field_1775 darkSkyList I
 	FIELD field_1806 textureManager Lnet/minecraft/class_76;
+	FIELD field_1814 client Lnet/minecraft/client/Minecraft;
+	FIELD field_1819 starsList I
+	FIELD field_1820 lightSkyList I
+	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/class_76;)V
+		ARG 1 client
+		ARG 2 textureManager
+	METHOD method_1559 renderStars ()V

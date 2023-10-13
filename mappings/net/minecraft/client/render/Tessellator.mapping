@@ -1,7 +1,9 @@
 CLASS net/minecraft/class_67 net/minecraft/client/render/Tessellator
+	FIELD field_2052 vboCount I
 	FIELD field_2053 bufferSize I
 	FIELD field_2054 INSTANCE Lnet/minecraft/class_67;
-	FIELD field_2055 useTriangles Z
+	FIELD field_2055 drawQuadsWithTriangles Z
+	FIELD field_2056 shouldUseVbo Z
 	FIELD field_2057 byteBuffer Ljava/nio/ByteBuffer;
 	FIELD field_2058 intBuffer Ljava/nio/IntBuffer;
 	FIELD field_2059 floatBuffer Ljava/nio/FloatBuffer;
@@ -16,12 +18,15 @@ CLASS net/minecraft/class_67 net/minecraft/client/render/Tessellator
 	FIELD field_2068 bufferPosition I
 	FIELD field_2069 addedVertexCount I
 	FIELD field_2070 colorDisabled Z
-	FIELD field_2071 mode I
+	FIELD field_2071 drawMode I
 	FIELD field_2072 xOffset D
 	FIELD field_2073 yOffset D
 	FIELD field_2074 zOffset D
 	FIELD field_2075 normal I
-	FIELD field_2076 drawing Z
+	FIELD field_2076 tessellating Z
+	FIELD field_2077 canUseVbo Z
+	FIELD field_2078 vbos Ljava/nio/IntBuffer;
+	FIELD field_2079 currentVbo I
 	METHOD <init> (I)V
 		ARG 1 bufferSize
 	METHOD method_1685 draw ()V
@@ -39,29 +44,29 @@ CLASS net/minecraft/class_67 net/minecraft/client/render/Tessellator
 		ARG 7 u
 		ARG 9 v
 	METHOD method_1689 color (FFF)V
-		ARG 1 r
-		ARG 2 g
-		ARG 3 b
+		ARG 1 red
+		ARG 2 green
+		ARG 3 blue
 	METHOD method_1690 color (FFFF)V
-		ARG 1 r
-		ARG 2 g
-		ARG 3 b
-		ARG 4 a
-	METHOD method_1691 start (I)V
-		ARG 1 mode
+		ARG 1 red
+		ARG 2 green
+		ARG 3 blue
+		ARG 4 alpha
+	METHOD method_1691 begin (I)V
+		ARG 1 drawMode
 	METHOD method_1692 color (II)V
 		ARG 1 rgb
-		ARG 2 a
+		ARG 2 alpha
 	METHOD method_1693 color (III)V
-		ARG 1 r
-		ARG 2 g
-		ARG 3 b
+		ARG 1 red
+		ARG 2 green
+		ARG 3 blue
 	METHOD method_1694 color (IIII)V
-		ARG 1 r
-		ARG 2 g
-		ARG 3 b
-		ARG 4 a
-	METHOD method_1695 startQuads ()V
+		ARG 1 red
+		ARG 2 green
+		ARG 3 blue
+		ARG 4 alpha
+	METHOD method_1695 beginQuads ()V
 	METHOD method_1696 translate (DDD)V
 		ARG 1 x
 		ARG 3 y
